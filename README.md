@@ -1,10 +1,10 @@
-# Sofware Simulated Operating System
-This application is a new and improved implimentation of the OS project that was assigned to our class in my college undergrad program. The idea is
+# Software Simulated Operating System
+This application is a new and improved implementation of the OS project that was assigned to our class in my college undergrad program. The idea is
 that we are creating a software based 'Operating System' that is capable of multithreading and moving through system 'processes' by reading a
 data file in the form of UTF-8 strings and performing the various 'operations' with the software based 'processor'. I am redoing this project
 to re-learn some pointer and memory logical processes and practices in C again.
 
-The main focus of this project is to mimic all important parts to an operating system inluding the memory management system, CPU scheduling
+The main focus of this project is to mimic all important parts to an operating system including the memory management system, CPU scheduling
 algorithms and 'system configurations' and even an event logging system.
 
 Design:
@@ -13,15 +13,19 @@ Boot Process:
 	1. Read the configuration file in and set system information in the processor/memory
 Processor:
 	1. Read the process files for each 'process' that needs to be run
+	2. Multiple scheduling algorithms
+		- First Come First Serve(FCFS)
+		- Shortest Job First(SJF)
+		- Round Robin
 Timer:
 	1. "Internal Clock System" that controls how long each 'cycle' takes in the processor. 
-		- 2 modes; syncronous(with holding loops) and asyncronous (w/ interrupts) ?
+		- 2 modes; synchronous(with holding loops) and asynchronous (w/ interrupts) ?
 	2. Sends interrupts after doing stated number of cycles for the processor
 Memory:
 	1. Needs a PCB struct to mimic a data entry in the process control blocks.
-	2. Active PCBs and used to hold running processes in the processor and hold active data from the processes that are still running but not activly working in the CPU
+	2. Active PCBs and used to hold running processes in the processor and hold active data from the processes that are still running but not actively working in the CPU
 Logger:
-	1. logs the process of the CPU,Memory,Config, etxc into an ourput file or to the users console for easier debugging of the program flow
+	1. logs the process of the CPU,Memory,Config, etc into an output file or to the users console for easier debugging of the program flow
 
 
 Goal:
