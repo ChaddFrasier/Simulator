@@ -55,3 +55,21 @@ P(run)14; O(printer)12; P(run)8; I(keyboard)90; P(run)11;
 O(printer)35; M(allocate)14200100; M(allocate)20301050; O(hard drive)53; A(end)0;  S(end)0;
 End Program Meta-Data Code.
 ```
+
+## Environment Setup
+1. GNU Compiler
+2. VS Code (Because I like Bash shells)
+3. Chocolatey (Make)
+
+
+
+
+
+
+
+
+## Build Project Script
+*Bash Script*: `. buildProject`
+
+## Run Script
+*Bash Script*: `. run`
