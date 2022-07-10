@@ -1,0 +1,67 @@
+Simulator Program
+===================
+
+Uploading Config Data
+
+Uploading Meta Data
+
+=========================
+BEGIN SIMULATOR
+
+ 0.000000, OS: System Start
+ 0.015751, OS: Creating Process Control Blocks
+ 0.029858, OS: All processes Initialized in NEW state
+ 0.036499, OS: All processes Set to READY state
+
+ 0.037960, OS: Process 0 was selected with 8390 ms, remaining
+ 0.048655, OS: Process 0 set to RUNNING state 
+
+ 0.051542, OS: Process 0,  keyboard input start
+ 3.076309, OS: Process 0,  keyboard input end
+ 3.083332, OS: Process 0,  run operation start
+ 3.146698, OS: Process 0,  run operation end
+ 3.148183, OS: Process 0,  run operation start
+ 3.208370, OS: Process 0,  run operation end
+ 3.208750, OS: Process 0,  printer output start
+ 4.514309, OS: Process 0,  printer output end
+ 4.515027, OS: Process 0,  run operation start
+ 4.575718, OS: Process 0,  run operation end
+ 4.575971, OS: Process 0,  keyboard input start
+ 6.776376, OS: Process 0,  keyboard input end
+ 6.776684, OS: Process 0,  run operation start
+ 6.836864, OS: Process 0,  run operation end
+ 6.837109, OS: Process 0,  printer output start
+ 7.537506, OS: Process 0,  printer output end
+ 7.537846, OS: Process 0,  hard drive output start
+ 8.318294, OS: Process 0,  hard drive output end
+
+ 8.318294, OS: Process 0 ended and set in EXIT state
+
+ 8.321942, OS: Process 1 was selected with 7470 ms, remaining
+ 8.322905, OS: Process 1 set to RUNNING state 
+
+ 8.323076, OS: Process 1,  keyboard input start
+11.303466, OS: Process 1,  keyboard input end
+11.304446, OS: Process 1,  run operation start
+11.364644, OS: Process 1,  run operation end
+11.364913, OS: Process 1,  run operation start
+11.425138, OS: Process 1,  run operation end
+11.425387, OS: Process 1,  printer output start
+11.825790, OS: Process 1,  printer output end
+11.826040, OS: Process 1,  run operation start
+11.886227, OS: Process 1,  run operation end
+11.886514, OS: Process 1,  keyboard input start
+14.086921, OS: Process 1,  keyboard input end
+14.087189, OS: Process 1,  run operation start
+14.147369, OS: Process 1,  run operation end
+14.147624, OS: Process 1,  printer output start
+14.848022, OS: Process 1,  printer output end
+14.848281, OS: Process 1,  hard drive output start
+15.628714, OS: Process 1,  hard drive output end
+
+15.628714, OS: Process 1 ended and set in EXIT state
+
+
+End Simulation - Complete
+=========================
+
