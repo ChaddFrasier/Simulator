@@ -1,0 +1,3 @@
+add_subdirectory(ConfigReader)
+add_subdirectory(SimulatedTimerSystem)
+add_executable(Sim simulatorInit.c)

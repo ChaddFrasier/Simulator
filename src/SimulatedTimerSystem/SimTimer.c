@@ -1,4 +1,3 @@
-// Program Information ////////////////////////////////////////////////////////
 /**
  * @file SimpleTimer.c
  * 
@@ -14,20 +13,14 @@
  *          
  * @Note Requires simtimer.h.
  * 
- */
-
-// Precompiler directives /////////////////////////////////////////////////////
-
+*/
 #ifndef SIMTIMER_C
 #define SIMTIMER_C
 
-// Header files ///////////////////////////////////////////////////////////////
-
-#include "simtimer.h"
-
-// Constants  /////////////////////////////////////////////////////////////////
+#include "SimTimer.h"
 
 const char RADIX_POINT = '.';
+const char SPACE = ' ';
 
 void runTimer( int milliSeconds )
    {
@@ -212,7 +205,7 @@ void timeToString( int secTime, int uSecTime, char *timeStr )
         index++;
        }
 
-    timeStr[ index ] = NULL_CHAR;
+    timeStr[ index ] = '\0';
 
     low = 0; high = index - 1;
 
@@ -227,8 +220,3 @@ void timeToString( int secTime, int uSecTime, char *timeStr )
    }
 
 #endif // ifndef SIMTIMER_C
-
-
-
-
-
