@@ -61,13 +61,19 @@ End Program Meta-Data Code.
 ```
 
 ## Environment Setup
-1. GNU Compiler
-2. VS Code (Because I like Bash shells)
-3. Chocolatey (Make)
-4. ...
+1. GNU Compiler (GCC v6.3.0)
+2. VS Code (IDE)
+3. CMake 
+4. Make (Chocolatey for Windows)
+5. Git
+6. VSCode Extensions:
+	- CMake Language Support
+	- CMake Tools
+	- C/C++ Tools
+	- C/C++ Extensions Pack
+	- C++ Better Syntax
 
 ## Scripts
----
 ### Build Project Script
 *Bash Script*: `./buildProject`
 
