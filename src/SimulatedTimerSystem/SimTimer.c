@@ -20,6 +20,7 @@
 #include "SimTimer.h"
 
 const char RADIX_POINT = '.';
+const char SPACE = ' ';
 
 void runTimer( int milliSeconds )
    {
