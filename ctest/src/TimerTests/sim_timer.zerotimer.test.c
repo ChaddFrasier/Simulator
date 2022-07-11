@@ -1,5 +1,5 @@
-#include "../headers/tests.h"
-#include "../../src/SimulatedTimerSystem/SimTimer.h"
+#include "../../headers/tests.h"
+#include "../../../src/SimulatedTimerSystem/SimTimer.h"
 #include <string.h>
 
 // This wll test that the sim timers ZERO_TIMER functionality
