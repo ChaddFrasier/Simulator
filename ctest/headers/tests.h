@@ -15,3 +15,6 @@
 
 
 #include <stdio.h>
+
+typedef enum {PASS, FAIL} TEST_STATUS;
+
