@@ -64,16 +64,18 @@ End Program Meta-Data Code.
 1. GNU Compiler
 2. VS Code (Because I like Bash shells)
 3. Chocolatey (Make)
+4. ...
 
+## Scripts
+---
+### Build Project Script
+*Bash Script*: `./buildProject`
 
+### Run Script
+*Bash Script*: `./run`
 
+### Build and Unit Test Script
+*Bash Script*: `./build_and_test`
 
-
-
-
-
-## Build Project Script
-*Bash Script*: `. buildProject`
-
-## Run Script
-*Bash Script*: `. run`
+### Unit Test Script
+*Bash Script*: `./test`
