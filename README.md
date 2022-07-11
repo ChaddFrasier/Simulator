@@ -46,7 +46,7 @@ SYSTEM_CONFIG_END
 ```
 
 And then uses the listed metadata file to read in the process of the form to create a PCB list for each process in the metadata file. 
-**Note: This is mimicing the concept of a processor executing any action that appears in the list of processor actions in the form
+**Note: This is mimicking the concept of a processor executing any action that appears in the list of processor actions in the form
 of a file, the creating a process control structure to then execute that process over X amount of cycles of the processor.**
 ```
 Start Program Meta-Data Code:
