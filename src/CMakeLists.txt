@@ -1,3 +1,4 @@
-add_subdirectory(ConfigReader)
+add_subdirectory(ConfigSystem)
+add_subdirectory(Logger)
 add_subdirectory(SimulatedTimerSystem)
 add_executable(Sim simulatorInit.c)

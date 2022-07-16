@@ -1,0 +1,1 @@
+add_library (CONFIG_SYSTEM ConfigSystem.c)
