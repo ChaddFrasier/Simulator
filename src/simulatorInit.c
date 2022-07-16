@@ -4,10 +4,21 @@
  * 
  * 
 */
+#include <stdbool.h>
+#include "ConfigSystem/ConfigSystem.h"
 
-#include "ConfigReader/ConfigReader.h"
 int Run_OS_Sim(void) {
-    HelloWorld();
+
+    FILE *file = NULL;
+    ConfigurationData simConfig;
+
+    file = fopen("../../data/config/basic.cnf", "r");
+
+
+    printf("RETURNED %s\n", ((CS_ReadConfigFile( file, &simConfig ) == CONFIGURATION_SUCCESS)?"SUCCESS": "FAIL" ) );
+    printf("RETURNED Data %s\n", (!(bool) simConfig.version)?"SUCCESS": "FAIL" );
+
+    fclose(file);
     return 0;
 }
 

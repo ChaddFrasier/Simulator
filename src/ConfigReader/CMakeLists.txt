@@ -1,1 +1,0 @@
-add_library (CONFIG_READER ConfigReader.c)
