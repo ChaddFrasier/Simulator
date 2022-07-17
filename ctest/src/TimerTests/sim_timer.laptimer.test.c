@@ -1,3 +1,6 @@
+#ifndef LAP_TEST_C
+#define LAP_TEST_C
+
 #include "../../headers/tests.h"
 #include "../../../src/SimulatedTimerSystem/SimTimer.h"
 
@@ -17,3 +20,4 @@ TEST{
     }
     return FAIL;
 }
+#endif
