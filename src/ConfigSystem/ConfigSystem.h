@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-
-#include "../Logger/logger.h"
+#include <stdlib.h>
 
 typedef enum CONFIG_STATUS_CODES{
     MALFORMED_FILE_ERROR,
@@ -23,7 +22,6 @@ typedef struct ConfigurationData {
     char * log_to_path; // file to log to if needed
 } ConfigurationData;
 
-
+CONFIG_STATUS_CODES initConfigurationData(ConfigurationData* data);
 CONFIG_STATUS_CODES CS_ReadConfigFile(FILE *file, ConfigurationData* configData);
-double getVersionFromLine( char * line );
-bool isVersionLine(char * line);
+char * cleanNewline( char * line);
