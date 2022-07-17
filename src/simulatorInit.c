@@ -4,6 +4,8 @@
  * 
  * 
 */
+#ifndef SIMULATOR_INIT_C
+#define SIMULATOR_INIT_C
 #include "ConfigSystem/ConfigSystem.h"
 #include "SimulatedTimerSystem/SimTimer.h"
 
@@ -13,12 +15,15 @@ int Run_OS_Sim(void) {
     ConfigurationData simConfig;
     CONFIG_STATUS_CODES status = initConfigurationData(&simConfig);
 
+    // check the values that have been set during initialization
+    displayConfigData(simConfig);
+
     if(status == CONFIGURATION_SUCCESS && simConfig.version > 0) {
         file = fopen("../../data/config/basic.cnf", "r");
 
-        printf("RETURNED %s\n", ((CS_ReadConfigFile( file, &simConfig ) == CONFIGURATION_SUCCESS)?"SUCCESS": "FAIL" ) );
-        printf("RETURNED Data %s\n", (simConfig.version)?"SUCCESS": "FAIL" );
+        // set new configuration data
 
+        // close the file when finished
         fclose(file);
     }
 
@@ -28,3 +33,4 @@ int Run_OS_Sim(void) {
 int main(int argc, char *argv[]) {
     return (int)Run_OS_Sim();
 }
+#endif

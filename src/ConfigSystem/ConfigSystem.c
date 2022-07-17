@@ -1,3 +1,6 @@
+#ifndef CONFIG_SYSTEM_C
+#define CONFIG_SYSTEM_C
+
 #include "ConfigSystem.h"
 
 static int MAX_LINE_LENGTH = 80;
@@ -5,18 +8,31 @@ static int FILE_LENGTH_LINES = 11;
 static char * START_PATTERN = "START CONFIG:";
 static char * END_PATTERN = "END CONFIG;";
 
-CONFIG_STATUS_CODES initConfigurationData(ConfigurationData * configDataPointer) {
 
+void displayConfigData( ConfigurationData data) {
+    printf("Version: %.3f\n", data.version);
+    printf("Quantum Cycles per Operation: %d\n", data.quantum_operation_cycles);
+    printf("Processor Cycle Time: %d\n", data.processor_cycle_time_msec);
+    printf("Operation Path: %s\n", data.process_path);
+    printf("Max Data Per Operation: %d\n", data.op_block_size);
+    printf("Output Log Filepath: %s\n", data.log_to_path);
+    printf("Log to setting: %s\n", getLogCodeStringDesc(data.log_to_code));
+    printf("Time per IO Operation: %d\n", data.io_cycle_time);
+    printf("CPU Scheduler Setting: %s\n", getCPUSchedulerDesc(data.cpu_scheduling_algo));
+}
+
+CONFIG_STATUS_CODES initConfigurationData(ConfigurationData * configDataPointer) {
     if(configDataPointer != NULL) {
         // set defaults to all data
         configDataPointer->version = 0.1;
         configDataPointer->quantum_operation_cycles = 2;
+        configDataPointer->io_cycle_time = 85;
         configDataPointer->processor_cycle_time_msec = 30;
-        configDataPointer->process_path = "\0";
-        configDataPointer->memory_block_size = 1000;
-        configDataPointer->log_to_path = "\0";
+        configDataPointer->process_path = "NONE\0";
+        configDataPointer->op_block_size = 1000;
+        configDataPointer->log_to_path = "NONE\0";
         configDataPointer->log_to_code = LOG_TO_CONSOLE;
-        configDataPointer->cpu_scheduling_algo = "FIFO";
+        configDataPointer->cpu_scheduling_algo = FIFOS;
 
         return CONFIGURATION_SUCCESS;
     } else {
@@ -48,6 +64,7 @@ CONFIG_STATUS_CODES CS_ReadConfigFile(FILE *file, ConfigurationData* configData 
     return CONFIGURATION_SUCCESS;
 }
 
+// this will proabably be moved eventually
 char * cleanNewline( char * line ) {
     // remove the \n
     for( int i = 0; i < strlen(line); i++ ) {
@@ -58,6 +75,27 @@ char * cleanNewline( char * line ) {
             return line;
         }
     };
-
     return NULL;
 }
+
+/**
+ * @brief THIS WILL BE MOVED TO THE CPU SCHEDULER EVENTUALLY
+ * 
+ * @param algo 
+ * @return char* 
+ */
+char * getCPUSchedulerDesc( CPU_ALGO algo ){
+    switch (algo)
+    {
+        case SJFS:
+            return "Shortest Job First - Serial";
+        case SRTFS:
+            return "Shortest Run Time First - Serial";
+        case FIFOS:
+            return "First Come First Serve - Serial";
+        default:
+            break;
+    }
+}
+
+#endif

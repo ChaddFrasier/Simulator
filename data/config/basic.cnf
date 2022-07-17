@@ -1,11 +1,11 @@
 START CONFIG:
-Version/Phase: 1.05
-File Path: metadata3a.mdf
-CPU Scheduling Code: SJF-N
-Quantum Time (cycles): 3
-Memory Available (MB): 995
-Processor Cycle Time (msec): 10
-I/O Cycle Time (msec): 20
-Log To:      Both
-Log File Path: logfile_1.lgf
-End Simulator Configuration File.
+0.2
+metadata3a.mdf
+SJF-N
+3
+995
+10
+20
+Both
+logfile_1.lgf
+END CONFIG;

@@ -1,3 +1,6 @@
+#ifndef ZERO_TEST_C
+#define ZERO_TEST_C
+
 #include "../../headers/tests.h"
 #include "../../../src/SimulatedTimerSystem/SimTimer.h"
 #include <string.h>
@@ -14,3 +17,4 @@ TEST{
     }
     return FAIL;
 }
+#endif
