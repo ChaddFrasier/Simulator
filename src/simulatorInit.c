@@ -4,22 +4,25 @@
  * 
  * 
 */
-#include <stdbool.h>
 #include "ConfigSystem/ConfigSystem.h"
+#include "SimulatedTimerSystem/SimTimer.h"
 
 int Run_OS_Sim(void) {
 
     FILE *file = NULL;
     ConfigurationData simConfig;
+    CONFIG_STATUS_CODES status = initConfigurationData(&simConfig);
 
-    file = fopen("../../data/config/basic.cnf", "r");
+    if(status == CONFIGURATION_SUCCESS && simConfig.version > 0) {
+        file = fopen("../../data/config/basic.cnf", "r");
 
+        printf("RETURNED %s\n", ((CS_ReadConfigFile( file, &simConfig ) == CONFIGURATION_SUCCESS)?"SUCCESS": "FAIL" ) );
+        printf("RETURNED Data %s\n", (simConfig.version)?"SUCCESS": "FAIL" );
 
-    printf("RETURNED %s\n", ((CS_ReadConfigFile( file, &simConfig ) == CONFIGURATION_SUCCESS)?"SUCCESS": "FAIL" ) );
-    printf("RETURNED Data %s\n", (!(bool) simConfig.version)?"SUCCESS": "FAIL" );
+        fclose(file);
+    }
 
-    fclose(file);
-    return 0;
+    return status;
 }
 
 int main(int argc, char *argv[]) {
