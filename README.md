@@ -85,3 +85,41 @@ End Program Meta-Data Code.
 
 ### Unit Test Script
 *Bash Script*: `./test`
+
+## Writing Unit Tests
+There are only 2 main steps to writing a unit test for this project.
+1. Create the test file
+2. Add the test executable to the ctest cmake file
+====
+1. Create a new directory for the test in ctest/src and create a new test file for each unit you want to test independantly.
+*NEW_TEST.c*
+```{c}
+#ifndef TEST_C
+#define TEST_C
+
+#include "../../headers/tests.h"
+#include "../../../src/<UNIT TO TEST>/<UNIT TO TEST>.h"
+TEST{
+	// success? return PASS;
+    if( true ) {
+        return PASS;
+    } else { // if test failed? return FAIL;
+        return FAIL;
+    }
+
+	// SHOULD ALWAYS FAIL BY DEFAULT. ONLY SUCCEED WHEN YOU FORCE THE SUCCESS
+    return FAIL;
+}
+#endif
+```
+
+2. Add the test executables into the project. Simply add these three lines into the cmake file at the ctest level.
+_Note: Please follow the format that is layed out already in the file_
+*ctest\CMakeLists.txt*
+```{cmake}
+add_executable(NewTest src/NewTest/newtest.test.c)
+
+target_link_libraries(NewTest PRIVATE UNIT_TO_TEST)
+
+add_test(NAME NewTest COMMAND NewTest)
+```
