@@ -7,7 +7,7 @@ add_executable(ConfigInitTests src/ConfigSystem/config_system.init.deinit.test.c
 target_link_libraries(LapTimerTests PRIVATE SIM_TIMER)
 target_link_libraries(ZeroTimerTests PRIVATE SIM_TIMER)
 
-target_link_libraries(ConfigInitTests PRIVATE CONFIG_SYSTEM)
+target_link_libraries(ConfigInitTests PRIVATE CONFIG_SYSTEM LOGGER)
 
 add_test(NAME LapTimerTests COMMAND LapTimerTests)
 add_test(NAME ZeroTimerTests COMMAND ZeroTimerTests)

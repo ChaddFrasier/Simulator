@@ -35,7 +35,6 @@ CONFIG_STATUS_CODES initConfigurationData(ConfigurationData * configDataPointer)
         configDataPointer->cpu_scheduling_algo = FIFOS;
         return CONFIGURATION_SUCCESS;
     } else {
-        printf("Configuration Data Pointer has already been initialized");
         return NULL_DATA_POINTER_ERROR;
     }
 }
