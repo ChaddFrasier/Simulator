@@ -7,12 +7,11 @@
 
 TEST{
     ConfigurationData data;
+    // test that initialize is working
     CONFIG_STATUS_CODES status = initConfigurationData(&data);
 
     if( status == CONFIGURATION_SUCCESS ) {
         return PASS;
-    } else {
-        return FAIL;
     }
     return FAIL;
 }
