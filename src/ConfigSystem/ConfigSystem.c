@@ -5,11 +5,11 @@
 
 static int MAX_LINE_LENGTH = 80;
 static int FILE_LENGTH_LINES = 11;
-static char * START_PATTERN = "START CONFIG:";
-static char * END_PATTERN = "END CONFIG;";
-
+static char * START_PATTERN = "Start Simulator Configuration File:";
+static char * END_PATTERN = "End Simulator Configuration File.";
 
 void displayConfigData( ConfigurationData data) {
+    printf("Data Structure Contains:\n");
     printf("Version: %.3f\n", data.version);
     printf("Quantum Cycles per Operation: %d\n", data.quantum_operation_cycles);
     printf("Processor Cycle Time: %d\n", data.processor_cycle_time_msec);
@@ -23,17 +23,16 @@ void displayConfigData( ConfigurationData data) {
 
 CONFIG_STATUS_CODES initConfigurationData(ConfigurationData * configDataPointer) {
     if(configDataPointer != NULL) {
-        // set defaults to all data
-        configDataPointer->version = 0.1;
-        configDataPointer->quantum_operation_cycles = 2;
-        configDataPointer->io_cycle_time = 85;
-        configDataPointer->processor_cycle_time_msec = 30;
+        // set empty data
+        configDataPointer->version = 0.0;
+        configDataPointer->quantum_operation_cycles = 0;
+        configDataPointer->io_cycle_time = 0;
+        configDataPointer->processor_cycle_time_msec = 0;
         configDataPointer->process_path = "NONE\0";
-        configDataPointer->op_block_size = 1000;
+        configDataPointer->op_block_size = 0;
         configDataPointer->log_to_path = "NONE\0";
         configDataPointer->log_to_code = LOG_TO_CONSOLE;
         configDataPointer->cpu_scheduling_algo = FIFOS;
-
         return CONFIGURATION_SUCCESS;
     } else {
         printf("Configuration Data Pointer has already been initialized");
