@@ -6,6 +6,7 @@
 */
 #ifndef SIMULATOR_INIT_C
 #define SIMULATOR_INIT_C
+
 #include "ConfigSystem/ConfigSystem.h"
 #include "SimulatedTimerSystem/SimTimer.h"
 

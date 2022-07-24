@@ -6,7 +6,10 @@
 #include <string.h>
 
 TEST{
-    if( true ) {
+    ConfigurationData data;
+    CONFIG_STATUS_CODES status = initConfigurationData(&data);
+
+    if( status == CONFIGURATION_SUCCESS ) {
         return PASS;
     } else {
         return FAIL;
