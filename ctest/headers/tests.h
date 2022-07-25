@@ -16,6 +16,12 @@
 #define TEST_ARGS int WinMain
 #endif
 
+#ifndef __unix__
+#define TEST int main(void)
+#define TEST_ARGS int main
+#endif
+
+
 #include <stdio.h>
 
 typedef enum {PASS, FAIL} TEST_STATUS;
